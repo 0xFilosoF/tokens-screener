@@ -16,13 +16,13 @@ export class GeckoTerminal extends BaseScreener {
   override async executeSymbol(symbol: string) {
     const path = this.#baseUrl + '?query=' + symbol + '&page=1';
 
-    return await super.executePair(path);
+    return await super.executeSymbol(path);
   }
 
   override async executeAddress(address: string) {
     const path = this.#baseUrl + '?query=' + address + '&page=1';
 
-    return await super.executePair(path);
+    return await super.executeAddress(path);
   }
 
   override async executePair(_path: string): Promise<TokensResponse> {
